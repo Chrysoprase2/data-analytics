@@ -50,6 +50,31 @@ def run_regression():
     plt.savefig(os.path.join(plots_dir, 'regression_residuals.png'))
     plt.close()
 
+    # 3. Shapiro-Wilk test on residuals
+    from scipy.stats import shapiro
+    stat, p_value = shapiro(residuals)
+    stats_file = 'results/statistics_summary.txt'
+    with open(stats_file, 'a') as f:
+        f.write("\n\nShapiro-Wilk Test for Normality on Regression Residuals\n")
+        f.write("-------------------------------------------------------\n")
+        f.write(f"Test Statistic: {stat:.4f}\n")
+        f.write(f"p-value: {p_value:.4e}\n")
+
+        alpha = 0.05
+        if p_value > alpha:
+            f.write("Conclusion: The residuals look Gaussian (fail to reject H0)\n")
+        else:
+            f.write("Conclusion: The residuals do not look Gaussian (reject H0)\n")
+
+    # 4. Q-Q Plot of the residuals
+    import statsmodels.api as sm
+    plt.figure(figsize=(8, 8))
+    sm.qqplot(residuals, line='45', fit=True)
+    plt.title('Q-Q Plot of Regression Residuals')
+    plt.tight_layout()
+    plt.savefig(os.path.join(plots_dir, 'regression_qqplot.png'))
+    plt.close('all')
+
     print("Regression analysis completed. Outputs saved.")
 
 if __name__ == '__main__':

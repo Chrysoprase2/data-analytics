@@ -3,7 +3,7 @@ Dep. Variable:   ,poverty_rate    ,  R-squared:         ,   0.241
 Model:           ,OLS             ,  Adj. R-squared:    ,   0.195
 Method:          ,Least Squares   ,  F-statistic:       ,   5.200
 Date:            ,Wed, 06 May 2026,  Prob (F-statistic):,7.28e-11
-Time:            ,12:46:10        ,  Log-Likelihood:    , -80.295
+Time:            ,13:28:35        ,  Log-Likelihood:    , -80.295
 No. Observations:,   331          ,  AIC:               ,   200.6
 Df Residuals:    ,   311          ,  BIC:               ,   276.6
 Df Model:        ,    19          ,                     ,
