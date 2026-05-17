@@ -1,5 +1,6 @@
 \babel@toc {ngerman}{}\relax 
 \beamer@sectionintoc {1}{Einführung}{3}{0}{1}
 \beamer@sectionintoc {2}{Fragestellung}{4}{0}{2}
-\beamer@sectionintoc {3}{Plots}{5}{0}{3}
-\beamer@sectionintoc {4}{Ergebnisse und Ausblick}{13}{0}{4}
+\beamer@sectionintoc {3}{Datenbeschaffung und Aufbereitung}{5}{0}{3}
+\beamer@sectionintoc {4}{Datenanalyse}{6}{0}{4}
+\beamer@sectionintoc {5}{Ergebnisse und Ausblick}{13}{0}{5}

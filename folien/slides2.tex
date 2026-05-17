@@ -10,6 +10,7 @@
 
 \usepackage[ngerman]{babel}
 \usepackage{caption}
+\usepackage{xcolor}
 
 % Seitennummer unten rechts anzeigen
 \setbeamertemplate{footline}[text line]{
@@ -81,7 +82,7 @@
 \end{frame}
 
 
-\section{Plots}
+\section{Datenbeschaffung und Aufbereitung}
 \begin{frame}{Übertragung bestehender Datensätze} % use case diagram
     \centering
     \includegraphics[
@@ -92,10 +93,11 @@
 \end{frame}
 
 
+\section{Datenanalyse}
 \begin{frame}{Klassifikation sozialer Schichten}
 \scriptsize
 \centering
-\caption{Charles Booths Klassifikation sozialer Schichten}
+\textbf{Charles Booths Klassifikation sozialer Schichten}
 \label{tab:booth_classes}
 
 \begin{tabular}{|c|p{4.8cm}|c|p{3.8cm}|}
@@ -146,9 +148,7 @@ Upper Middle \\
 \end{tabular}
 
 \end{frame}
-
 %------------------------------------------------
-
 
 %------------------------------------------------
 
@@ -221,16 +221,54 @@ Upper Middle \\
 \section{Ergebnisse und Ausblick}
 %------------------------------------------------
 
-\begin{frame}{Ausblick}
+\begin{frame}{Ergebnisse}
 
     test test
     \begin{itemize}
-        \item ´
+        \item \textcolor{red}{Labourjobs besonders armutsanfällig:} 
+        \begin{itemize}
+            \item \textcolor{red}{Tagediebe, Kriminelle}
+            \item \textcolor{red}{Gelegenheitsarbeiter bis zu Vollzeitarbeiter}
+            \item \textcolor{green}{Schichtleiter und Personalverantwortung}
+        \end{itemize}
+        \item \textcolor{red}{Weibliche Alleinverdiener besonders armutsanfällig}
+        \item \textcolor{green}{Angestellte in Verkauf und Gastgewerbe wenig armutsanfällig}
     \end{itemize}
     %\begin{figure}
     %\includegraphics[width=0.8\linewidth]{abb/pic.jpeg}
     %\caption{Stonehenge}
     %\end{figure}
+\end{frame}
+
+\begin{frame}{Ergebnisse}
+
+    test test
+    \begin{itemize}
+        \item \textcolor{red}{Weibliche Alleinverdiener besonders armutsanfällig}
+        \item \textcolor{green}{--> Männliche Alleinverdiener nicht armutsanfällig}
+        \item \textcolor{green}{Anzahl der Kinder hat nur geringen Einfluss auf Armut}
+    \end{itemize}
+    %\begin{figure}
+    %\includegraphics[width=0.8\linewidth]{abb/pic.jpeg}
+    %\caption{Stonehenge}
+    %\end{figure}
+\end{frame}
+
+\begin{frame}{Güte und Belastbarkeit des Modells}
+    \begin{itemize}
+        \item 23,8\% Varianz der Armutsrate abgedeckt
+        \item --> Großteil der Varianz ungeklärt
+        \item keine Komplettabdeckung durch gegebene Daten
+        \item ledigliche Korrelationswerte
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Learnings}
+    \begin{itemize}
+        \item 
+        \item 
+        \item 
+    \end{itemize}
 \end{frame}
 
 
