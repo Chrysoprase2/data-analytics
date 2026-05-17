@@ -11,8 +11,8 @@ def create_presentation_plots():
     os.makedirs(output_dir, exist_ok=True)
 
     # Load Data
-    classes_df = pd.read_csv('data/raw/classes_boroughs_total.csv')
-    professions_df = pd.read_csv('data/raw/professions_total.csv')
+    classes_df = pd.read_csv('../data/raw/classes_boroughs_total.csv')
+    professions_df = pd.read_csv('../data/raw/professions_total.csv')
 
     # Colors (Booth-Palette)
     color_poverty = '#264653' # Dark Blue/Black
