@@ -7,11 +7,13 @@ der methodischen Datenbeschaffung sowie der Anwendung moderner statistischer Ver
 
 \section*{Armut im viktorianischen London}
 \label{sec:kontext}
-Während des 19.\ Jahrhunderts versuchte der Sozialforscher Charles Booth, Ausmaß und Ursachen der Armut in East-London zu erfassen.
+Während des 19.\ Jahrhunderts versuchte der Positivist Charles Booth, Ausmaß und Ursachen der Armut in East-London zu erfassen.
 Dafür nutzte er bestehende statistische Daten,
-die er dann analysierte, kategorisierte, und schließlich 1897 in \textit{"LIFE AND LABOUR OF THE PEOPLE IN LONDON"}\ \cite{life_and_labour} veröffentlichte.
+die er dann analysierte, kategorisierte, und schließlich 1897 in \textit{"LIFE AND LABOUR OF THE PEOPLE IN LONDON"}\ (im Folgenden auch als \textit{"LIFE AND LABOUR"} abgekürzt)
+\cite{life_and_labour} veröffentlichte,
+welches eines der bekanntesten Exemplare einer frühen (vor-) soziologischen Studie ist.
 
-Dafür führt er folgende Klassifikation der Arbeiterklasse ein:
+Dafür führt er die in \autoref{tab:booth_classes} beschriebene Klassifikation der Arbeiterklasse ein.
 
 \begin{table}[htbp]
 \centering
@@ -66,36 +68,26 @@ Upper Middle \\
 \end{tabular}
 \end{table}
 
-Die Besonderheit unseres Projektes liegt in der Datengrundlage: Da keine digitalen Datensätze verfügbar waren, wurden die Datensätze manuell persistiert, um sie später gem. unseres Vorlesungsinhaltes in Python zu verarbeiten. 
+\section*{Motivation und Relevanz}
+In der Entstehungsgeschichte der Soziologie sind Armut und Ungleichheit neben Religion, und Angewohnheiten und Verhalten zentrale Themen.
+Es ging dabei häufig darum, den Ausmaß von Armut im Zuge der Industriellen Revolution und seiner Folgen zu Messen.
+Auch in modernen Gesellschaften sind Armut und Ungleichheit weit verbreitet, wenn auch nicht im selben Ausmaß.
+Nichtsdestotrotz bietet der Blick auf die Zeit, in der unsere modernen Gesellschaften entstanden eine wertvolle Perspektive.
 
-\section{Motivation und Relevanz}
-\label{subsec:motivation}
+Dafür werden in dieser Arbeit mögliche Faktoren für Armut und die Entstehung sozialer Ungleichheit untersucht.
 
-Die Motivation für dieses Mini-Projekt entspringt der Notwendigkeit, komplexe sozioökonomische Zusammenhänge nicht nur deskriptiv zu erfassen, sondern durch analytische Statistik tiefere Einblicke in strukturelle Risikofaktoren zu gewinnen.
+\subsection*{Methodische Motivation: Moderne Analyse historischer Daten}
+Da Charles Booth in seiner Zeit keinen Zugang zu modernen statistischen Methoden und Tests hatte, ist auch interessant,
+inwiefern wir mit diesen neue Einsichten erlangen können.
+Insbesondere ist auch eine grafische Aufbereitung der Daten, die über die Bar-Charts in \textit{"LIFE AND LABOUR"} hinausgeht möglich.
 
-\subsubsection{Methodische Motivation: Moderne Analyse historischer Daten}
-Hauptmotivation war für uns die Überlegung ob bestimmte Berufssektoren oder Familienkonstellationen systematisch benachteiligt waren und ob dies  Rückschlüsse auf die Entstehung sozialer Ungleichheit zulässt. Aus Sicht der Data Analytics besteht der besondere Reiz darin, moderne statistische Verfahren auf einen Datensatz anzuwenden, der ursprünglich mit weit einfacheren Mitteln ausgewertet wurde. Hauptaugenmerk liegt hierbei darauf:
-\begin{itemize}
-    \item Sämtliche Vorbedingungen für statistische Tests (wie die Normalverteilung) kritisch zu hinterfragen und zu dokumentieren.
-    \item Durch fortgeschrittene Methoden wie die robuste multiple Regression Erkenntnisse zu generieren, die über die rein deskriptiven Zahlen der Originalquellen hinausgehen.
-    \item Relevante Risikofaktoren zu messen, anstatt wahllos verfügbare Datenpunkte zu korrelieren.
-\end{itemize}
-
-\subsubsection{Nutzen für Dritte}
-Die Beantwortung unserer Fragestellung liefert einen Mehrwert für Historiker, Soziologen und Datenanalysten gleichermaßen. Durch die Paraphrasierung der Ergebnisse wird deutlich, welche Faktoren tatsächlich belastbare Prädiktoren für Armut waren. Dies ermöglicht eine präzise Bewertung historischer Lebensumstände und dient als Fallstudie für den Umgang mit nicht-idealen, realen Datensätzen in der modernen Wissenschaft.
-
-
-
-\section{Verfeinerung der Fragestellung}
+\section*{Verfeinerung der Fragestellung}
 \label{sec:verfeinerung}
 
 Unsere ursprüngliche Fragestellung lautet: \textit{„Welche Faktoren bestimmten die Armut im London des 19. Jahrhunderts?“}.
 
-\subsubsection{Der Mehrwert moderner Methoden}
-Zur Zeit der Datenerhebung durch Booth waren Verfahren der inferenzstatistischen Modellierung wie die multiple lineare Regression oder nicht-parametrische Signifikanztests entweder noch nicht entwickelt oder aufgrund mangelnder Rechenkapazitäten nicht anwendbar. Booth konnte Korrelationen visuell identifizieren, jedoch nicht deren statistische Signifikanz unter Berücksichtigung von Störvariablen (Multikollinearität) prüfen. Unser Projekt nutzt diese modernen Verfahren, um die historischen Daten auf ihre mathematische Belastbarkeit zu untersuchen.
-
-\subsubsection{Konkretisierung und Hypothesenbildung}
-Um die grobe Fragestellung operabel zu machen, haben wir sie in drei konkrete Untersuchungsebene unterteilt:
+\subsection*{Konkretisierung und Hypothesenbildung}
+Um die Fragestellung operabel zu machen, haben wir sie in drei konkrete Untersuchungsebene unterteilt:
 
 \begin{figure}[h]
     \centering
@@ -178,10 +170,3 @@ Um die grobe Fragestellung operabel zu machen, haben wir sie in drei konkrete Un
     \caption{Grafische Verfeinerung der Fragestellung gemäß Phase 1}
     \label{fig:fragestellung}
 \end{figure}
-
-\section{Zielsetzung des Berichts}
-\label{sec:zielsetzung}
-
- In der vorliegenden Ausarbeitung werden alle Projektphasen, von der Definition der Fragestellung über die Datenverarbeitung bis hin zur Modellbildung, detailliert beschrieben und begründet. Im Fokus steht dabei die Beantwortung der verfeinerten Fragestellung. Über die rein deskriptive Darstellung hinaus verfolgt dieser Bericht das Ziel, durch inferenzstatistische Methoden belastbare Erkenntnisse über soziale Abhängigkeiten und strukturelle Benachteiligungen zu gewinnen.
-
-Damit soll verdeutlicht werden, welchen praktischen Nutzen die Beantwortung der Fragestellung für die Einordnung historischer Lebensumstände sowie für das Verständnis allgemeiner Armutsmechanismen bietet.
