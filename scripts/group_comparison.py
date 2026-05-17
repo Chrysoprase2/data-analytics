@@ -3,8 +3,8 @@ from scipy.stats import kruskal
 import os
 
 def run_group_comparison():
-    input_file = 'data/processed/final_analysis_data.csv'
-    stats_file = 'results/statistics_summary.txt'
+    input_file = '../data/processed/final_analysis_data.csv'
+    stats_file = '../results/statistics_summary.txt'
 
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")

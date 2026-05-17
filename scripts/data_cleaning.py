@@ -3,8 +3,8 @@ import glob
 import os
 
 def clean_data():
-    raw_dir = 'data/raw'
-    processed_dir = 'data/processed'
+    raw_dir = '../data/raw'
+    processed_dir = '../data/processed'
 
     # List all CSV files
     all_files = glob.glob(os.path.join(raw_dir, '*.csv'))

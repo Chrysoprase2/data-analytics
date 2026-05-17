@@ -7,7 +7,7 @@ import os
 
 def create_presentation_plots():
     # Setup directories
-    output_dir = 'results/plots/presentation/'
+    output_dir = '../results/plots/presentation/'
     os.makedirs(output_dir, exist_ok=True)
 
     # Load Data

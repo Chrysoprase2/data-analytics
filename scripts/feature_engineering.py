@@ -3,8 +3,8 @@ import numpy as np
 import os
 
 def engineer_features():
-    input_file = 'data/processed/merged_london_data.csv'
-    output_file = 'data/processed/final_analysis_data.csv'
+    input_file = '../data/processed/merged_london_data.csv'
+    output_file = '../data/processed/final_analysis_data.csv'
 
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")

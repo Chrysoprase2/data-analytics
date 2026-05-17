@@ -17,9 +17,9 @@ Assistants,15,Shops and refreshment houses,169,169,300,74,80,792,0,48,19,160,495
 Other wages,16,"Police, soldiers, sub-officials",70,70,125,31,33,329,0,0,0,0,329,0,0,0,329
 Other wages,17,Seamen,226,226,325,79,108,964,0,26,112,334,492,0,0,0,964
 Other wages,18,Other wage earners,139,139,215,54,67,614,18,36,44,214,258,44,0,0,614
-Manufacture,19,Home industries (not employing),183,183,358,88,87,899,0,10,169,208,324,188,0,0,899
-Manufacture,20,Small employers,258,258,570,140,124,1350,0,0,0,22,324,831,173,0,1350
-Manufacture,21,Large employers,19,19,45,11,10,104,0,0,0,0,0,0,73,31,104
+Manufacture &c.,19,Home industries (not employing),183,183,358,88,87,899,0,10,169,208,324,188,0,0,899
+Manufacture &c.,20,Small employers,258,258,570,140,124,1350,0,0,0,22,324,831,173,0,1350
+Manufacture &c.,21,Large employers,19,19,45,11,10,104,0,0,0,0,0,0,73,31,104
 Dealers,22,"Street sellers, &c.",199,199,350,86,95,929,0,223,380,121,196,9,0,0,929
 Dealers,23,General dealers,78,78,156,39,37,388,0,11,60,39,229,49,0,0,388
 Dealers,24,Small shops,366,366,740,182,175,1829,0,9,0,220,1089,460,51,0,1829
