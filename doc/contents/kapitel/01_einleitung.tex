@@ -1,0 +1,181 @@
+\chapter{Einleitung und Fragestellung}
+\label{chap:einleitung}
+
+Die vorliegende Dokumentation beschreibt die Durchführung und die Ergebnisse unseres Datenanalyseprojekts im Rahmen des Moduls Data-Analytics. Gemäß der im Kurs behandelten Phasen liegt der Fokus auf der Definition einer Fragestellung, der methodischen Datenbeschaffung sowie der Anwendung moderner statistischer Verfahren zur Ableitung von Handlungsempfehlungen.
+
+\section{Armut im viktorianischen London}
+\label{sec:kontext}
+Während des 19. Jahrhunders versuchte der Soziologe Charles Booth, Ausmaß und Ursachen der Armut in East-London zu erfassen. Sein Ansatz basierte hierbei auf systematischer Erfassung und Analyse von Daten. Die hierbei entstandene Monografie \textit{“Life and Labour of the People in London”} lieferte neben statistische Tabellen auch detaillierte, farbcodierte Landkarten, welche die soziale Schichtung der Stadt visualisierten. Hierzu führte er folgende Klassifikation innerhalb der Arbeitergruppen ein: 
+
+\begin{table}[htbp]
+\centering
+\caption{Charles Booths Klassifikation sozialer Schichten}
+\label{tab:booth_classes}
+
+\begin{tabular}{|c|p{4.8cm}|c|p{3.8cm}|}
+\hline
+\textbf{Class} & \textbf{Description} & \textbf{Category} & \textbf{Alias} \\
+\hline
+
+A & Lowest class &
+very poor \& semi-criminal &
+Lowest Class \\
+\hline
+
+B & Casual earnings &
+very poor \& semi-criminal &
+Casual Earnings \\
+\hline
+
+C & Intermittent earnings &
+poor &
+Irregular Earnings \\
+\hline
+
+D & Small regular earnings &
+poor &
+Regular Minimum \\
+\hline
+
+E & Regular standard earnings &
+comfortable &
+Ordinary Earnings \\
+\hline
+
+F & Higher class labour &
+comfortable &
+Highly Paid Work \\
+\hline
+
+G & Lower middle class &
+well to do &
+Lower Middle \\
+\hline
+
+H & Upper middle class &
+well to do &
+Upper Middle \\
+\hline
+
+\end{tabular}
+\end{table}
+
+Die Besonderheit unseres Projektes liegt in der Datengrundlage: Da keine digitalen Datensätze verfügbar waren, wurden die Datensätze manuell persistiert, um sie später gem. unseres Vorlesungsinhaltes in Python zu verarbeiten. 
+
+\section{Motivation und Relevanz}
+\label{subsec:motivation}
+
+Die Motivation für dieses Mini-Projekt entspringt der Notwendigkeit, komplexe sozioökonomische Zusammenhänge nicht nur deskriptiv zu erfassen, sondern durch analytische Statistik tiefere Einblicke in strukturelle Risikofaktoren zu gewinnen.
+
+\subsubsection{Methodische Motivation: Moderne Analyse historischer Daten}
+Hauptmotivation war für uns die Überlegung ob bestimmte Berufssektoren oder Familienkonstellationen systematisch benachteiligt waren und ob dies  Rückschlüsse auf die Entstehung sozialer Ungleichheit zulässt. Aus Sicht der Data Analytics besteht der besondere Reiz darin, moderne statistische Verfahren auf einen Datensatz anzuwenden, der ursprünglich mit weit einfacheren Mitteln ausgewertet wurde. Hauptaugenmerk liegt hierbei darauf:
+\begin{itemize}
+    \item Sämtliche Vorbedingungen für statistische Tests (wie die Normalverteilung) kritisch zu hinterfragen und zu dokumentieren.
+    \item Durch fortgeschrittene Methoden wie die robuste multiple Regression Erkenntnisse zu generieren, die über die rein deskriptiven Zahlen der Originalquellen hinausgehen.
+    \item Relevante Risikofaktoren zu messen, anstatt wahllos verfügbare Datenpunkte zu korrelieren.
+\end{itemize}
+
+\subsubsection{Nutzen für Dritte}
+Die Beantwortung unserer Fragestellung liefert einen Mehrwert für Historiker, Soziologen und Datenanalysten gleichermaßen. Durch die Paraphrasierung der Ergebnisse wird deutlich, welche Faktoren tatsächlich belastbare Prädiktoren für Armut waren. Dies ermöglicht eine präzise Bewertung historischer Lebensumstände und dient als Fallstudie für den Umgang mit nicht-idealen, realen Datensätzen in der modernen Wissenschaft.
+
+
+
+\section{Verfeinerung der Fragestellung}
+\label{sec:verfeinerung}
+
+Unsere ursprüngliche Fragestellung lautet: \textit{„Welche Faktoren bestimmten die Armut im London des 19. Jahrhunderts?“}.
+
+\subsubsection{Der Mehrwert moderner Methoden}
+Zur Zeit der Datenerhebung durch Booth waren Verfahren der inferenzstatistischen Modellierung wie die multiple lineare Regression oder nicht-parametrische Signifikanztests entweder noch nicht entwickelt oder aufgrund mangelnder Rechenkapazitäten nicht anwendbar. Booth konnte Korrelationen visuell identifizieren, jedoch nicht deren statistische Signifikanz unter Berücksichtigung von Störvariablen (Multikollinearität) prüfen. Unser Projekt nutzt diese modernen Verfahren, um die historischen Daten auf ihre mathematische Belastbarkeit zu untersuchen.
+
+\subsubsection{Konkretisierung und Hypothesenbildung}
+Um die grobe Fragestellung operabel zu machen, haben wir sie in drei konkrete Untersuchungsebene unterteilt:
+
+\begin{figure}[h]
+    \centering
+    \begin{tikzpicture}[
+        scale=0.9,
+        transform shape,
+        scale=0.8,
+        transform shape,
+        node distance=2.8cm and 2.8cm,
+        every node/.style={font=\small},
+        main/.style={
+            rectangle,
+            rounded corners,
+            draw=black,
+            thick,
+            align=center,
+            minimum width=4.8cm,
+            minimum height=1.2cm,
+            fill=gray!10
+        },
+        sub/.style={
+            rectangle,
+            rounded corners,
+            draw=black,
+            align=center,
+            text width=4.8cm,
+            minimum height=3.6cm,
+            fill=blue!5
+        },
+        arrow/.style={
+            ->,
+            thick
+        }
+    ]
+
+    % main node
+    \node[main] (poverty)
+    {\textbf{Armut im viktorianischen London}};
+
+    % sub node
+    \node[sub, below left=of poverty] (demo)
+    {
+        \textbf{Demografisches Risiko}\\[0.2cm]
+        Haushaltsgröße\\
+        Anteil der Kinder\\[0.3cm]
+        \scriptsize
+        Welchen Einfluss hat die Haushaltsgröße,\\
+        insbesondere der Anteil der Kinder,\\
+        auf die Zugehörigkeit zur Armutsklasse?
+    };
+
+    \node[sub, below=of poverty] (struct)
+    {
+        \textbf{Strukturelles Risiko}\\[0.2cm]
+        Berufsstatus\\
+        Sektion / Tätigkeit\\[0.3cm]
+        \scriptsize
+        Inwieweit ist der Berufsstatus\\
+        ein isolierter Prädiktor für Armut,\\
+        wenn demografische Faktoren kontrolliert werden?
+    };
+
+    \node[sub, below right=of poverty] (social)
+    {
+        \textbf{Soziales Risiko}\\[0.2cm]
+        Familienstand\\
+        Witwer / Alleinstehende\\[0.3cm]
+        \scriptsize
+        Besteht ein signifikanter Zusammenhang\\
+        zwischen Familienstand und extremer Armut?
+    };
+
+    % arrowssssssss
+    \draw[arrow] (demo) -- (poverty);
+    \draw[arrow] (struct) -- (poverty);
+    \draw[arrow] (social) -- (poverty);
+
+    \end{tikzpicture}
+
+    \caption{Grafische Verfeinerung der Fragestellung gemäß Phase 1}
+    \label{fig:fragestellung}
+\end{figure}
+
+\section{Zielsetzung des Berichts}
+\label{sec:zielsetzung}
+
+ In der vorliegenden Ausarbeitung werden alle Projektphasen, von der Definition der Fragestellung über die Datenverarbeitung bis hin zur Modellbildung, detailliert beschrieben und begründet. Im Fokus steht dabei die Beantwortung der verfeinerten Fragestellung. Über die rein deskriptive Darstellung hinaus verfolgt dieser Bericht das Ziel, durch inferenzstatistische Methoden belastbare Erkenntnisse über soziale Abhängigkeiten und strukturelle Benachteiligungen zu gewinnen.
+
+Damit soll verdeutlicht werden, welchen praktischen Nutzen die Beantwortung der Fragestellung für die Einordnung historischer Lebensumstände sowie für das Verständnis allgemeiner Armutsmechanismen bietet.

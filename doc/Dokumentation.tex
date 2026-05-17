@@ -1,0 +1,114 @@
+
+% Die 'book' Klasse sorgt für die gewünschte Formatierung, 
+% Kapitel, \frontmatter, \mainmatter, etc.
+\documentclass[a4paper,oneside,openright,11pt]{book}
+
+% --- Kernpakete ---
+\usepackage[T1]{fontenc}
+\usepackage{lmodern} % Schriftart Latin Modern
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel} % Für deutsche Silbentrennung und Begriffe
+\usepackage{parskip}
+\usepackage{graphicx} % Für Bilder (Logo)
+
+
+% --- Nützliche Pakete aus Ihrer Vorlage ---
+\usepackage{listings} % Für Code-Blöcke (Dockerfile, etc.)
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{url}
+\def\UrlBreaks{\do\/\do-} % Zeilenumbrüche in URLs
+\usepackage{hyperref} % Klickbare Links (Inhaltsverzeichnis, URLs)
+\usepackage{xspace}
+\usepackage{csquotes}
+\usepackage{rotating}
+
+%  Unser eigenes Titel-Paket
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
+\usepackage{projectdoc} 
+
+\MakeOuterQuote{"}
+% 
+% Vermeidet "Overfull \hbox" (Text ragt über den Rand)
+\setlength{\emergencystretch}{3em}
+\hyphenpenalty=5000
+\tolerance=1000
+
+% --- HIER ALLE TITELSEITEN-DATEN EINGEBEN ---
+
+% 1. Logo (muss im selben Ordner liegen)
+% WICHTIG: Kommentieren Sie diese Zeile aus, wenn die Logo-Datei nicht existiert
+\unilogo{\includegraphics[scale=1]{FHDW-Logo.eps}} 
+
+% 2. Uni-Name (optional, kann leer bleiben)
+\uniname{}
+
+% 3. Dokumententyp
+\docType{Projektdokumentation} 
+
+% 4. Projektname (Haupttitel)
+\title{19th Century London Data}
+
+% 5. Version
+%\version{Version 1.0}
+
+% 6. Autoren (mit \and trennen)
+\author{Leonie Abels, Amirreza Ahmadi Darani, Aziz Klebleyev, Bjarne Möller, \and Franz Müller, Xuan-Loc Tran}
+
+
+% 7. Kurs / Modul
+\course{Data Analytics}
+
+% 8. Professor
+\prof{Prof. Dr. Jil Klünder}
+
+% 9. Datum
+\date{\today}
+
+% --- Ende der Daten ---
+
+\begin{document}
+
+% --- VORDERTEIL (Frontmatter) ---
+% Sorgt für römische Seitenzahlen (i, ii, iii...)
+% und keine Kapitelnummern im Inhaltsverzeichnis
+\frontmatter
+
+% Erstellt die Titelseite
+\maketitle
+
+% Optional: Fügen Sie hier eine Management Summary ein
+% \chapter*{Management Summary}
+% Hier kommt Ihre Zusammenfassung...
+% \clearpage
+
+% Erstellt das Inhaltsverzeichnis
+\tableofcontents
+
+% --- HAUPTTEIL (Mainmatter) ---
+% Startet die Seitenzählung bei 1, 2, 3...
+% Kapitel werden jetzt nummeriert
+\mainmatter
+
+% Wir laden den Inhalt für jedes Kapitel aus dem Ordner 'kapitel/'
+% Dies hält Ihre Hauptdatei sauber und übersichtlich.
+
+\input{contents/kapitel/01_einleitung}
+\input{contents/kapitel/02_methodik}
+\input{contents/kapitel/03_vorverarbeitung}
+\input{contents/kapitel/04_analyse}
+\input{contents/kapitel/05_ergebnisse}
+\input{contents/kapitel/06_handlungsempfehlungen}
+
+% % --- ANHANG (Appendix) ---
+\appendix % Schaltet hier auf Anhang-Kapitel um (Kapitel A, B, C...)
+
+\input{contents/kapitel/anhang} 
+
+% --- RÜCKTEIL (Backmatter) ---
+% ( Bibliografie, die wir nicht brauchen)
+\backmatter
+
+\end{document}

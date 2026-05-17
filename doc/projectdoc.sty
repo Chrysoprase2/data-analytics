@@ -1,0 +1,79 @@
+% --- Save this file as projectdoc.sty ---
+\ProvidesPackage{projectdoc}
+
+% Required for graphics (logo) and spacing
+\RequirePackage{graphicx}
+
+% --- project documentation ---
+\newcommand{\@unilogo}{}
+\newcommand{\@uniname}{}
+\newcommand{\@docType}{}
+\newcommand{\@version}{}
+\newcommand{\@course}{}
+\newcommand{\@prof}{}
+
+% --- User-facing commands to set the data ---
+\newcommand{\unilogo}[1]{\renewcommand{\@unilogo}{#1}}
+\newcommand{\uniname}[1]{\renewcommand{\@uniname}{#1}}
+\newcommand{\docType}[1]{\renewcommand{\@docType}{#1}}
+\newcommand{\version}[1]{\renewcommand{\@version}{#1}}
+\newcommand{\course}[1]{\renewcommand{\@course}{#1}}
+\newcommand{\prof}[1]{\renewcommand{\@prof}{#1}}
+
+% We use the standard \title, \author, \date - 
+
+% --- \maketitle command, customized  ---
+\renewcommand{\maketitle}{%
+  \begin{titlepage}
+    \centering % Center all content on the title page
+    
+    % 1. University Logo
+    \vspace*{1em}
+    \@unilogo
+    
+    \vspace*{2em}
+    
+    \vfill % Pushes content to the vertical center
+    
+    % 2. Document Type (LARGE font)
+    {\LARGE\sffamily\textbf{\@docType}}
+    
+    \vspace*{2em} % Space between doc type and main title
+    
+    % 3. Project Name (LARGEST font - Main Title)
+    {\Huge\sffamily\textbf{\@title}}
+    
+    \vfill % Pushes the next block down
+    
+    % 4. Version (medium font)
+    {\large\sffamily\@version}
+    
+    \vspace*{2em}
+    
+    % 5. Prepared by (medium font)
+    {\large\sffamily Erstellt von}
+    
+    \vspace*{1em}
+    
+    % 6. Authors (medium font)
+    {\large\sffamily
+      \begin{tabular}[t]{c}
+        \@author
+      \end{tabular}
+    }
+    
+    \vfill
+    \vfill % Use two \vfill to push the last block further down
+    
+    % 7. Course and Prof (medium font)
+    {\large\sffamily
+      \@course \\
+      \@prof \\
+      \@date
+    }
+    
+    \vspace*{2em} % Some padding from the bottom edge
+  \end{titlepage}%
+}
+
+\endinput

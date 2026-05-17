@@ -1,0 +1,119 @@
+\appendix % Schaltet auf den Anhang-Modus um (A, B, C...)
+
+\chapter{Appendix}
+
+\begin{table}[h]
+\centering
+\caption{OLS Regression Results}
+\label{tab:ols_results}
+
+\scriptsize
+
+\begin{tabular}{|l|r|r|r|r|}
+\hline
+\textbf{Variable} & \textbf{Coef.} & \textbf{Std. Err.} & \textbf{z} & \textbf{P$>|z|$} \\
+\hline
+
+Intercept & 0.2497 & 0.059 & 4.231 & 0.000 \\
+Artisans & 0.0116 & 0.034 & 0.344 & 0.731 \\
+Assistants & -0.0791 & 0.051 & -1.552 & 0.121 \\
+Dealers & 0.0126 & 0.055 & 0.229 & 0.819 \\
+Females & 0.1583 & 0.055 & 2.877 & 0.004 \\
+Labour & 0.2339 & 0.066 & 3.558 & 0.000 \\
+Locomotion & -0.0943 & 0.043 & -2.177 & 0.029 \\
+Manufacture & -0.1222 & 0.060 & -2.035 & 0.042 \\
+Manufacture \&c. & -0.1393 & 0.068 & -2.037 & 0.042 \\
+Manufacturers & -0.0232 & 0.144 & -0.161 & 0.872 \\
+No work & 0.1001 & 0.102 & 0.986 & 0.324 \\
+Other & -0.1176 & 0.196 & -0.600 & 0.548 \\
+Other wages & -0.0908 & 0.046 & -1.955 & 0.051 \\
+Refreshment & -0.2003 & 0.048 & -4.201 & 0.000 \\
+Refreshments & -0.2185 & 0.032 & -6.746 & 0.000 \\
+Salaried & -0.1898 & 0.042 & -4.526 & 0.000 \\
+Salaried \&c. & -0.1398 & 0.049 & -2.872 & 0.004 \\
+Total & -0.0166 & 1.152 & -0.014 & 0.988 \\
+kids\_per\_household & -0.0220 & 0.027 & -0.817 & 0.414 \\
+unmarried\_ratio & 0.4120 & 0.449 & 0.917 & 0.359 \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Model Information} & \textbf{Value} \\
+\hline
+Dependent Variable & log\_poverty\_rate \\
+R-squared & 0.238 \\
+Adjusted R-squared & 0.192 \\
+F-statistic & 16.67 \\
+Prob (F-statistic) & $5.42 \times 10^{-37}$ \\
+No. Observations & 331 \\
+Df Residuals & 311 \\
+Df Model & 19 \\
+Covariance Type & HC3 \\
+Durbin-Watson & 1.651 \\
+Jarque-Bera (JB) & 15.796 \\
+Prob (JB) & 0.000371 \\
+Cond. No. & 63.9 \\
+\hline
+\end{tabular}
+
+\vspace{0.3cm}
+
+\footnotesize
+\textit{Notes: Standard Errors are heteroscedasticity robust (HC3).}
+
+\end{table}
+
+
+\begin{table}[h]
+\centering
+\caption{Statistical Test Results}
+\label{tab:statistical_tests}
+
+\small
+
+\begin{tabular}{|p{6cm}|c|c|p{4.5cm}|}
+\hline
+\textbf{Test} & \textbf{Statistic} & \textbf{p-value} & \textbf{Conclusion} \\
+\hline
+
+Shapiro-Wilk Test for Normality on poverty\_rate
+& 0.8229
+& $9.1119 \times 10^{-19}$
+& The sample does not look Gaussian (reject $H_0$)
+\\
+\hline
+
+Kruskal-Wallis Test on poverty\_rate across Section\_Class
+& 68.1526
+& $4.4751 \times 10^{-8}$
+& Significant difference between sections (reject $H_0$)
+\\
+\hline
+
+Shapiro-Wilk Test for Normality on Regression Residuals (Base Model)
+& 0.9423
+& $4.5952 \times 10^{-10}$
+& Residuals do not look Gaussian (reject $H_0$)
+\\
+\hline
+
+Shapiro-Wilk Test for Normality on Regression Residuals (Transformed Model)
+& 0.9842
+& $1.0606 \times 10^{-3}$
+& Residuals do not look Gaussian (reject $H_0$)
+\\
+\hline
+
+\end{tabular}
+
+\vspace{0.4cm}
+
+\footnotesize
+\textbf{Model Comparison:}
+The transformed model using $\log(1+x)$ better fulfills the statistical prerequisites, particularly the normality assumption of residuals.
+
+\end{table}
+    
