@@ -1,0 +1,5 @@
+Zufallszahlengeneratoren mit Modulus 2 (f¨ur diskrete Gleichverteilung in {0, 1})
+
+
+Zufallszahlengeneratoren mit Modulus 2 (f¨ur diskrete Gleichverteilung in {0, 1})
+Abschnitt 4 in [2
