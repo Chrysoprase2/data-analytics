@@ -3,18 +3,18 @@
 
 In diesem Kapitel wird der Prozess der Datenakquise und -aufbereitung detailliert beschrieben. Da für die Fragestellung keine modernen digitalen Datensätze zur Verfügung standen, musste eine Brücke zwischen historischer Dokumentation und moderner Datenanalyse geschlagen werden.
 
-\section{Beschreibung der Datenquelle}
-Als primäre Datenquelle dient das Werk \textit{"Life and Labour of the People in London"} von Charles Booth (1886--1903). Die Analyse stützt sich auf die detaillierten Tabellen, in denen die Bevölkerung Londons nach Berufsfeldern (Sections) und sozialen Klassen (A--H) kategorisiert wurde. Jede Zeile der Originaltabellen enthält Informationen über:
+\section*{Beschreibung der Datenquelle}
+Als primäre Datenquelle dient das Werk \textit{"Life and Labour of the People in London"} von Charles Booth (1886--1903). Die Analyse stützt sich auf die detaillierten Tabellen, in denen die Bevölkerung Londons nach Berufsfeldern (section*s) und sozialen Klassen (A--H) kategorisiert wurde. Jede Zeile der Originaltabellen enthält Informationen über:
 \begin{itemize}
     \item Die \textbf{Berufsklasse} (z. B. Labour, Artisans, Dealers).
     \item Demografische Merkmale wie \textbf{Heads of Families}, \textbf{Wives} und \textbf{Children} unter 15 Jahren.
     \item Die Verteilung der Personen auf die \textbf{sozialen Klassen A bis H}.
 \end{itemize}
 
-\section{Problematik unklarer oder ungenauer Daten}
+\section*{Problematik unklarer oder ungenauer Daten}
 Es lässt sich anmerken, dass Booths gelieferten Daten teils ungenau sind. So werden an einigen Stellen Schätzungen vorgenommen, die nicht als solche ausgezeichnet sind.
 
-\section{Datenerhebung und manuelle Transkription}
+\section*{Datenerhebung und manuelle Transkription}
 Die Datenerhebung erfolgte durch die manuelle Übertragung der Informationen aus digitalen Scans der Originalseiten in ein maschinenlesbares Format (CSV). Dieser Prozess umfasste:
 \begin{itemize}
     \item \textbf{Digitalisierung:} Übertragung der gedruckten Tabellen in CSV-Dateien für jeden untersuchten Borough.
@@ -23,14 +23,14 @@ Die Datenerhebung erfolgte durch die manuelle Übertragung der Informationen aus
 \end{itemize}
 
 
-\section{Eingesetzte Tools und Infrastruktur}
+\section*{Eingesetzte Tools und Infrastruktur}
 Für die Verwaltung und Verarbeitung der Daten wurden folgende Werkzeuge genutzt:
 \begin{itemize}
     \item \textbf{GitHub:} Versionskontrolle und Zusammenarbeit im Team. Die Nutzung von Branches (z. B. \texttt{trial}-Branch) ermöglichte eine parallele Bearbeitung von Skripten und Datensätzen.
     \item \textbf{Python (Pandas):} Zentrale Bibliothek für die Datenmanipulation. Pandas wurde gewählt, da es eine effiziente Harmonisierung unterschiedlicher Tabellenstrukturen und eine automatisierte Berechnung neuer Metriken ermöglicht.
 \end{itemize}
 
-\section{Vorgehen bei der Datenzusammenführung (Data Merging)}
+\section*{Vorgehen bei der Datenzusammenführung (Data Merging)}
 Ein entscheidender Schritt war die Kombination der einzelnen Distrikt-Tabellen zu einem Gesamtdatensatz (\texttt{merged\_london\_data.csv}). Das Vorgehen gliederte sich in:
 \begin{enumerate}
     \item \textbf{Standardisierung:} Vereinheitlichung der Spaltennamen, da die Originalscans teilweise leicht variierende Schreibweisen (z. B. "Heads of Famlies" vs. "Heads of Families") aufwiesen.

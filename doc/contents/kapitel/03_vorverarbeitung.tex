@@ -3,7 +3,7 @@
 
 In dieser Phase wurden die digitalisierten Rohdaten bereinigt und transformiert, um eine präzise Beantwortung der Forschungsfragen zu ermöglichen. Ein wesentlicher Bestandteil war die Überprüfung statistischer Voraussetzungen, um die Belastbarkeit der späteren Modelle sicherzustellen.
 
-\section{Datenbereinigung / Data Cleaning}
+\section*{Datenbereinigung / Data Cleaning}
 Bevor die eigentliche Analyse beginnen konnte, mussten die aggregierten Daten aus den verschiedenen Boroughs harmonisiert werden.
 \begin{itemize}
     \item \textbf{Standardisierung:} Spaltenbezeichnungen wurden vereinheitlicht, um Inkonsistenzen zwischen den Teildatensätzen zu beseitigen. Dies umfasst z.b. die Korrektur von "Heads of Famlies" zu "Heads of Families".
@@ -20,7 +20,7 @@ Hieraus ließ sich folgender Boxplot für die Armutsraten erstellen:
     \label{fig:povertyClasses}
 \end{figure}
 
-\section{Feature Engineering: Konstruktion von Metriken}
+\section*{Feature Engineering: Konstruktion von Metriken}
 Um die Fragestellung nach Risikofaktoren operationalisierbar zu machen, wurden aus den Rohdaten neue Variablen berechnet:
 \begin{itemize}
     \item \textbf{Poverty Rate:} Um die Armut messbar zu machen, wurde die Quote der Klassen A bis D im Verhältnis zur Gesamtbevölkerung einer Sektion berechnet: 
@@ -28,14 +28,14 @@ Um die Fragestellung nach Risikofaktoren operationalisierbar zu machen, wurden a
     \item \textbf{Kids per Household:} Um die demografische Belastung zu erfassen, wurde die Anzahl der Kinder pro Haushaltsvorstand ermittelt (\textit{Children / Heads of Families}).
 \end{itemize}
 
-\section{Statistische Voraussetzungsprüfung}
+\section*{Statistische Voraussetzungsprüfung}
 Ein zentraler Aspekt der Qualitätssicherung war die Überprüfung der Normalverteilung. 
 \begin{itemize}
     \item \textbf{Shapiro-Wilk-Test:} Der Test auf die \textit{poverty\_rate} ergab eine Test-Statistik von 0,8229 und einen p-Wert von $9,11 \times 10^{-19}$.
     \item \textbf{Ergebnis:} Da der p-Wert weit unter der Schwelle von 0,05 liegt, wurde die Nullhypothese einer Normalverteilung abgelehnt. Die Stichprobe ist somit nicht-gaussisch (not Gaussian).
 \end{itemize}
 
-\section{Methodische Konsequenzen}
+\section*{Methodische Konsequenzen}
 Aufgrund der fehlenden Normalverteilung wurden die Analysepläne angepasst, um die Validität der Ergebnisse nicht zu gefährden:
 \begin{itemize}
     \item \textbf{Nicht-parametrische Tests:} Für Gruppenvergleiche wurde der Kruskal-Wallis-Test anstelle einer ANOVA gewählt.
