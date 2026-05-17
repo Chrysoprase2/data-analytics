@@ -5,9 +5,9 @@ from scipy.stats import shapiro
 import os
 
 def run_eda_and_tests():
-    input_file = 'data/processed/final_analysis_data.csv'
-    plots_dir = 'results/plots'
-    stats_file = 'results/statistics_summary.txt'
+    input_file = '../data/processed/final_analysis_data.csv'
+    plots_dir = '../results/plots'
+    stats_file = '../results/statistics_summary.txt'
 
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")
