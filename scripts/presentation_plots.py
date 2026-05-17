@@ -15,8 +15,8 @@ def create_presentation_plots():
     professions_df = pd.read_csv('data/raw/professions_total.csv')
 
     # Colors (Booth-Palette)
-    color_poverty = '#0a1d37' # Dark Blue/Black
-    color_above = '#d69f4c' # Gold
+    color_poverty = '#264653' # Dark Blue/Black
+    color_above = '#e9c46a' # Gold
     color_highlight = '#b53131' # Red
 
     # -------------------------------------------------------------
@@ -40,7 +40,7 @@ def create_presentation_plots():
     for text in texts:
         text.set_fontsize(14)
 
-    ax.set_title('Das Londoner Armuts-Rad (Klassen A-H)', fontsize=20, weight='bold', pad=20)
+    ax.set_title('Klassenrad von A-H', fontsize=20, weight='bold', pad=20)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'poverty_donut.png'), dpi=300, bbox_inches='tight')
     plt.close()
@@ -64,7 +64,7 @@ def create_presentation_plots():
     job_data = job_df.sort_values(by='Heads of Famlies', ascending=False)
 
     fig, ax = plt.subplots(figsize=(16, 10))
-    cmap = plt.get_cmap('RdYlBu_r') # Red for high poverty, Blue for low poverty
+    cmap = plt.get_cmap('YlOrRd') # Red for high poverty, Blue for low poverty
     mini = 0.0
     maxi = 1.0
     norm = plt.Normalize(vmin=mini, vmax=maxi)
@@ -83,7 +83,7 @@ def create_presentation_plots():
     cbar = fig.colorbar(sm, ax=ax, orientation='vertical', fraction=0.03, pad=0.04)
     cbar.set_label('Armutsrisiko (Poverty Rate)', fontsize=14, weight='bold')
 
-    plt.title('Die Job-Landschaft nach Armutsrisiko', fontsize=24, weight='bold', pad=20)
+    plt.title('Job-Landschaft nach Armutsrisiko', fontsize=24, weight='bold', pad=20)
     plt.axis('off')
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'job_landscape_treemap.png'), dpi=300, bbox_inches='tight')
@@ -161,10 +161,12 @@ def create_presentation_plots():
     ax.tick_params(axis='y', labelsize=14)
     ax.set_xlabel('Anzahl der weiblichen Haushaltsvorstände', fontsize=14)
 
-    plt.title('Die "unsichtbaren" Frauen (Alleinverdiener)', fontsize=20, weight='bold', pad=20)
+    plt.title('Weibliche Alleinverdiener', fontsize=20, weight='bold', pad=20)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'invisible_women_bar.png'), dpi=300, bbox_inches='tight')
     plt.close()
+
+
 
     # -------------------------------------------------------------
     # 5. London Poverty Comparison (Horizontal Bar Chart for all districts)
@@ -193,7 +195,7 @@ def create_presentation_plots():
 
     # Add vertical line for London average
     ax.axvline(london_avg, color=color_highlight, linestyle='--', linewidth=2, zorder=0)
-    ax.text(london_avg + 0.5, len(districts_df) - 1, f'London Average: {london_avg:.1f}%',
+    ax.text(london_avg + 0.5, -0.4, f'London Average: {london_avg:.1f}%',
             color=color_highlight, fontsize=12, weight='bold', va='center')
 
     for bar in bars:
@@ -209,7 +211,7 @@ def create_presentation_plots():
     ax.tick_params(axis='y', labelsize=14)
     ax.set_xlabel('Armutsquote (%)', fontsize=14)
 
-    plt.title('Armutsquote pro Distrikt im Vergleich', fontsize=20, weight='bold', pad=20)
+    plt.title('Armutsquote nach Borough', fontsize=20, weight='bold', pad=20)
     plt.tight_layout()
     plt.savefig(os.path.join(output_dir, 'city_contrasts_gauge.png'), dpi=300, bbox_inches='tight')
     plt.close()
