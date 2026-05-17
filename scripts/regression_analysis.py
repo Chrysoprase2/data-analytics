@@ -5,9 +5,9 @@ import seaborn as sns
 import os
 
 def run_regression():
-    input_file = 'data/processed/final_analysis_data.csv'
-    plots_dir = 'results/plots'
-    model_output_file = 'results/model_output.csv'
+    input_file = '../data/processed/final_analysis_data.csv'
+    plots_dir = '../results/plots'
+    model_output_file = '../results/model_output.csv'
 
     if not os.path.exists(input_file):
         print(f"Error: {input_file} not found.")
@@ -48,7 +48,7 @@ def run_regression():
     stat_base, p_value_base = shapiro(residuals_base)
     stat_trans, p_value_trans = shapiro(residuals_transformed)
 
-    stats_file = 'results/statistics_summary.txt'
+    stats_file = '../results/statistics_summary.txt'
     with open(stats_file, 'a') as f:
         f.write("\n\nShapiro-Wilk Test for Normality on Regression Residuals (Base Model)\n")
         f.write("-------------------------------------------------------\n")
@@ -98,7 +98,7 @@ def run_regression():
     plt.close('all')
 
     # 3. Output Final Regression Report
-    final_report_file = 'results/final_regression_report.txt'
+    final_report_file = '../results/final_regression_report.txt'
     with open(final_report_file, 'w') as f:
         if p_value_trans > p_value_base:
             f.write(results_transformed.summary().as_text())
