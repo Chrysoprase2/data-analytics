@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.17)  17 MAY 2026 07:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.5.17)  17 MAY 2026 22:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1051,7 +1051,7 @@ Package rerunfilecheck Info: File `slides2.out' has not changed.
 Here is how much of TeX's memory you used:
  24265 strings out of 467525
  460982 string characters out of 5425861
- 865523 words of memory out of 5000000
+ 865524 words of memory out of 5000000
  52670 multiletter control sequences out of 15000+600000
  636744 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1062,7 +1062,7 @@ ts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmssbx10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/sy
 mbols/msam10.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfss1095.pf
 b>
-Output written on slides2.pdf (14 pages, 2233853 bytes).
+Output written on slides2.pdf (14 pages, 2231898 bytes).
 PDF statistics:
  166 PDF objects out of 1000 (max. 8388607)
  116 compressed objects within 2 object streams
